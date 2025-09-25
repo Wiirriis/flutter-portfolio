@@ -29,7 +29,7 @@ class CustomDrawer extends StatelessWidget {
 
   Widget _buildHeader() {
     return Container(
-      height: 180.h,
+      height: 190.h,
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topLeft,
@@ -56,17 +56,19 @@ class CustomDrawer extends StatelessWidget {
                   color: primaryColor,
                 ),
               ),
-              SizedBox(height: 12.h),
+              SizedBox(height: 8.h),
               Text(
                 'Hola,',
                 style: TextStyle(
-                  fontSize: 16.sp,
+                  fontSize: 14.sp,
                   color: Colors.white70,
                 ),
               ),
               Text(
                 userName,
-                style: title2White,
+                style: title2White.copyWith(
+                  fontSize: 22.sp,
+                ),
                 overflow: TextOverflow.ellipsis,
               ),
             ],
@@ -91,7 +93,7 @@ class CustomDrawer extends StatelessWidget {
         title: 'Sobre mí',
         onTap: () {
           Navigator.pop(context);
-          // Navigate to about
+          Navigator.pushNamed(context, '/about');
         },
       ),
       DrawerItem(
@@ -99,7 +101,7 @@ class CustomDrawer extends StatelessWidget {
         title: 'Proyectos',
         onTap: () {
           Navigator.pop(context);
-          // Navigate to projects
+          Navigator.pushNamed(context, '/projects');
         },
       ),
       DrawerItem(
@@ -107,7 +109,7 @@ class CustomDrawer extends StatelessWidget {
         title: 'Experiencia',
         onTap: () {
           Navigator.pop(context);
-          // Navigate to experience
+          Navigator.pushNamed(context, '/experience');
         },
       ),
       DrawerItem(
@@ -115,7 +117,7 @@ class CustomDrawer extends StatelessWidget {
         title: 'Habilidades',
         onTap: () {
           Navigator.pop(context);
-          // Navigate to skills
+          Navigator.pushNamed(context, '/skills');
         },
       ),
       DrawerItem(
@@ -123,7 +125,7 @@ class CustomDrawer extends StatelessWidget {
         title: 'Contacto',
         onTap: () {
           Navigator.pop(context);
-          // Navigate to contact
+          Navigator.pushNamed(context, '/contact');
         },
       ),
     ];

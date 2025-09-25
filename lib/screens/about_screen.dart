@@ -44,6 +44,8 @@ class AboutScreen extends StatelessWidget {
       ),
       child: Column(
         children: [
+          // TODO: Agregar fotografía personal aquí
+          // Implementar funcionalidad para cargar y mostrar imagen de perfil
           Container(
             width: 100.w,
             height: 100.h,

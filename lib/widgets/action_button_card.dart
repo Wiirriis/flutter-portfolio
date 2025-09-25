@@ -81,8 +81,9 @@ class ActionButtonCard extends StatelessWidget {
                       style: subtitle2.copyWith(
                         color: enabled ? textPrimary : textSecondary,
                         fontWeight: FontWeight.w500,
+                        fontSize: 14.sp,
                       ),
-                      maxLines: 2,
+                      maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
