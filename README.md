@@ -48,19 +48,19 @@ La aplicación incluye un sistema completo de componentes UI personalizados:
 ## 📸 Screenshots
 
 ### Pantalla Principal
-![Home Screen](screenshots/home_screen.png)
+![Home Screen](assets/screenshots/home_screen.png)
 
 ### Experiencia
-![Experience Screen](screenshots/experience_screen.png)
+![Experience Screen](assets/screenshots/experience_screen.png)
 
 ### Habilidades
-![Skills Screen](screenshots/skills_screen.png)
+![Skills Screen](assets/screenshots/skills_screen.png)
 
 ### Catalogo de componentes
-![Catalog Screen](screenshots/catalog_screen.png)
+![Catalog Screen](assets/screenshots/catalog_screen.png)
 
 ### Contacto
-![Contact Screen](screenshots/contact_screen.png)
+![Contact Screen](assets/screenshots/contact_screen.png)
 
 
 ## 🚀 Características Técnicas
