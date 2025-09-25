@@ -68,7 +68,6 @@ class _ExperienceScreenState extends State<ExperienceScreen> {
       ),
       body: Column(
         children: [
-          _buildSearchBar(),
           _buildCategorySelector(),
           Expanded(
             child: _buildComponentShowcase(),
@@ -104,73 +103,63 @@ class _ExperienceScreenState extends State<ExperienceScreen> {
 
   Widget _buildCategorySelector() {
     return Container(
-      height: 120.h,
-      padding: EdgeInsets.symmetric(horizontal: 16.w),
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: _categories.length,
-        itemBuilder: (context, index) {
-          final category = _categories[index];
+      padding: EdgeInsets.all(16.w),
+      child: Wrap(
+        spacing: 12.w,
+        runSpacing: 8.h,
+        children: _categories.asMap().entries.map((entry) {
+          final index = entry.key;
+          final category = entry.value;
           final isSelected = index == _selectedCategoryIndex;
 
           return GestureDetector(
             onTap: () => setState(() => _selectedCategoryIndex = index),
-            child: Container(
-              width: 140.w,
-              margin: EdgeInsets.only(right: 12.w),
+            child: AnimatedContainer(
+              duration: const Duration(milliseconds: 200),
+              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
               decoration: BoxDecoration(
                 color: isSelected ? primaryColor : Colors.white,
-                borderRadius: BorderRadius.circular(12.r),
+                borderRadius: BorderRadius.circular(20.r),
                 border: Border.all(
                   color: isSelected ? primaryColor : Colors.grey.shade300,
+                  width: isSelected ? 2 : 1,
                 ),
                 boxShadow: isSelected ? [
                   BoxShadow(
-                    color: primaryColor.withOpacity(0.2),
-                    offset: Offset(0, 4.h),
-                    blurRadius: 8.r,
+                    color: primaryColor.withOpacity(0.3),
+                    offset: Offset(0, 2.h),
+                    blurRadius: 6.r,
                   ),
-                ] : [],
+                ] : [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.05),
+                    offset: Offset(0, 1.h),
+                    blurRadius: 2.r,
+                  ),
+                ],
               ),
-              child: Padding(
-                padding: EdgeInsets.all(12.w),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      category.icon,
-                      color: isSelected ? Colors.white : primaryColor,
-                      size: 24.w,
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(
+                    category.icon,
+                    color: isSelected ? Colors.white : primaryColor,
+                    size: 18.w,
+                  ),
+                  SizedBox(width: 8.w),
+                  Text(
+                    category.title,
+                    style: TextStyle(
+                      fontSize: 13.sp,
+                      fontWeight: FontWeight.w600,
+                      color: isSelected ? Colors.white : textPrimary,
                     ),
-                    SizedBox(height: 8.h),
-                    Text(
-                      category.title,
-                      style: TextStyle(
-                        fontSize: 11.sp,
-                        fontWeight: FontWeight.w600,
-                        color: isSelected ? Colors.white : textPrimary,
-                      ),
-                      textAlign: TextAlign.center,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                    SizedBox(height: 4.h),
-                    Text(
-                      category.description,
-                      style: TextStyle(
-                        fontSize: 9.sp,
-                        color: isSelected ? Colors.white.withOpacity(0.8) : textSecondary,
-                      ),
-                      textAlign: TextAlign.center,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           );
-        },
+        }).toList(),
       ),
     );
   }
@@ -410,6 +399,7 @@ class _ExperienceScreenState extends State<ExperienceScreen> {
           ),
           SizedBox(height: 24.h),
           _buildSectionHeader('Campo de Búsqueda'),
+          _buildSearchBar(),
           SizedBox(height: 16.h),
           SearchField(hintText: 'Buscar productos...'),
           SizedBox(height: 24.h),
