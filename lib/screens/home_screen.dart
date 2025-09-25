@@ -116,7 +116,7 @@ class HomeScreen extends StatelessWidget {
         Expanded(
           child: _buildStatCard(
             icon: Icons.people_outline,
-            value: '5000+',
+            value: '5K+',
             label: 'Usuarios',
           ),
         ),
@@ -255,7 +255,7 @@ class HomeScreen extends StatelessWidget {
         ),
         SizedBox(height: 16.h),
         _buildProjectCard(
-          title: 'Bowpi - LaaS Platform (Fintech)',
+          title: 'Bowpi - Fintech',
           description: 'Plataforma de Lending as a Service para créditos digitales',
           tech: 'Angular • Java Spring Boot • Docker',
         ),
@@ -298,41 +298,41 @@ class HomeScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
-            children: [
-              Container(
-                width: 40.w,
-                height: 40.h,
-                decoration: BoxDecoration(
-                  color: primaryColor.withOpacity(0.1),
-                  borderRadius: BorderRadius.circular(8.r),
+              children: [
+                Container(
+                  width: 40.w,
+                  height: 40.h,
+                  decoration: BoxDecoration(
+                    color: primaryColor.withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(8.r),
+                  ),
+                  child: Icon(
+                    Icons.smartphone,
+                    size: 20.w,
+                    color: primaryColor,
+                  ),
                 ),
-                child: Icon(
-                  Icons.smartphone,
-                  size: 20.w,
-                  color: primaryColor,
+                SizedBox(width: 12.w),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        title,
+                        style: subtitle1,
+                      ),
+                      SizedBox(height: 4.h),
+                      Text(
+                        description,
+                        style: body2,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              SizedBox(width: 12.w),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      title,
-                      style: subtitle1,
-                    ),
-                    SizedBox(height: 4.h),
-                    Text(
-                      description,
-                      style: body2,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
+              ],
+            ),
           SizedBox(height: 12.h),
           Container(
             padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),

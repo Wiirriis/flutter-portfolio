@@ -23,7 +23,7 @@ class ProjectsScreen extends StatelessWidget {
             _buildHeaderSection(),
             SizedBox(height: 24.h),
             _buildProjectCard(
-              title: 'Bowpi - Lending as a Service (Fintech)',
+              title: 'Bowpi - LaaS',
               subtitle: 'Plataforma Fintech',
               description: 'Plataforma de Lending as a Service (LaaS) que digitaliza y optimiza todo el proceso de otorgamiento de créditos mediante un modelo modular configurable.',
               impact: 'Automatización del 100% del proceso de créditos digitales',
@@ -31,8 +31,8 @@ class ProjectsScreen extends StatelessWidget {
               achievements: [
                 'Desarrollo de portales web escalables',
                 'Implementación de CI/CD con Docker y Jenkins',
-                'Integración de agentes de IA para automatización',
-                'Reducción de 20% en tiempos operativos con n8n'
+                'Integración de herramientas de IA para agilizar procesos',
+                'Ambiente crítico con alta disponibilidad y seguridad',
               ],
               status: 'En desarrollo',
               period: '2025',
@@ -436,7 +436,7 @@ class ProjectsScreen extends StatelessWidget {
               Expanded(
                 child: _buildStatItem(
                   icon: Icons.people,
-                  value: '5500+',
+                  value: '5K+',
                   label: 'Usuarios\nImpactados',
                 ),
               ),
@@ -495,7 +495,9 @@ class ProjectsScreen extends StatelessWidget {
               fontSize: 18.sp,
               fontWeight: FontWeight.bold,
               color: primaryColor,
+              overflow: TextOverflow.ellipsis,
             ),
+            maxLines: 2,
           ),
           SizedBox(height: 4.h),
           Text(
@@ -503,8 +505,10 @@ class ProjectsScreen extends StatelessWidget {
             style: TextStyle(
               fontSize: 11.sp,
               color: textSecondary,
+              overflow: TextOverflow.ellipsis,
             ),
             textAlign: TextAlign.center,
+            maxLines: 2,
           ),
         ],
       ),
