@@ -1,4 +1,4 @@
-package com.example.portfolio_app
+package com.example.cesar_portfolio
 
 import io.flutter.embedding.android.FlutterActivity
 

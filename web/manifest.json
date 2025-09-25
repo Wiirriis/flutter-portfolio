@@ -1,6 +1,6 @@
 {
-    "name": "portfolio_app",
-    "short_name": "portfolio_app",
+    "name": "cesar_portfolio",
+    "short_name": "cesar_portfolio",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#hexcode",
