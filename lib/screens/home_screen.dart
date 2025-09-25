@@ -255,7 +255,7 @@ class HomeScreen extends StatelessWidget {
         ),
         SizedBox(height: 16.h),
         _buildProjectCard(
-          title: 'Bowpi - LaaS Platform',
+          title: 'Bowpi - LaaS Platform (Fintech)',
           description: 'Plataforma de Lending as a Service para créditos digitales',
           tech: 'Angular • Java Spring Boot • Docker',
         ),

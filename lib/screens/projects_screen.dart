@@ -23,7 +23,7 @@ class ProjectsScreen extends StatelessWidget {
             _buildHeaderSection(),
             SizedBox(height: 24.h),
             _buildProjectCard(
-              title: 'Bowpi - Lending as a Service',
+              title: 'Bowpi - Lending as a Service (Fintech)',
               subtitle: 'Plataforma Fintech',
               description: 'Plataforma de Lending as a Service (LaaS) que digitaliza y optimiza todo el proceso de otorgamiento de créditos mediante un modelo modular configurable.',
               impact: 'Automatización del 100% del proceso de créditos digitales',
