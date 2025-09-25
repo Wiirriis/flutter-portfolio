@@ -69,9 +69,9 @@ La aplicación incluye un sistema completo de componentes UI personalizados:
 - **Diseño Responsivo**: Adaptable a diferentes tamaños de pantalla
 - **Orientación**: Optimizado para modo portrait
 - **UI/UX**: Diseño moderno con Material Design 3
-- **Navegación**: Sistema de rutas y drawer personalizado
+- **Navegación**: Sistema de rutas escalable
 - **Componentes**: Biblioteca de widgets reutilizables
-- **Tema**: Colores y estilos consistentes
+- **Tema**: Colores y estilos vibrantes
 
 ## 🛠️ Tecnologías Utilizadas
 
