@@ -208,7 +208,7 @@ class HomeScreen extends StatelessWidget {
               },
             ),
             ActionButtonCard(
-              title: 'Experiencia',
+              title: 'Catalogo',
               icon: Icons.timeline_outlined,
               onTap: () {
                 Navigator.pushNamed(context, '/experience');

@@ -9,3 +9,9 @@ const Color cardColor = Colors.white;
 const Color textPrimary = Color(0xFF212121);
 const Color textSecondary = Color(0xFF757575);
 const Color dividerColor = Color(0xFFBDBDBD);
+
+// Colores adicionales para el catálogo
+const Color successColor = Color(0xFF4CAF50);
+const Color warningColor = Color(0xFFFF9800);
+const Color errorColor = Color(0xFFF44336);
+const Color infoColor = Color(0xFF2196F3);
