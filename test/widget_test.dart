@@ -8,23 +8,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:cesar_portfolio/main.dart';
+import 'package:CesarPortfolio/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+  testWidgets('Portfolio app loads correctly', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(const MyApp());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    // Verify that the welcome text is displayed.
+    expect(find.text('¡Bienvenido!'), findsOneWidget);
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // Verify that navigation buttons are present.
+    expect(find.text('Sobre mí'), findsOneWidget);
+    expect(find.text('Proyectos'), findsOneWidget);
+    expect(find.text('Contacto'), findsOneWidget);
+    expect(find.text('CV/Resume'), findsOneWidget);
   });
 }

@@ -80,8 +80,6 @@ class ActionButtonCard extends StatelessWidget {
                       ? (iconColor ?? primaryColor)
                       : textSecondary,
                 ),
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
               ),
               SizedBox(height: 8.h),
               Padding(
@@ -92,9 +90,7 @@ class ActionButtonCard extends StatelessWidget {
                   style: subtitle2.copyWith(
                     color: enabled ? textPrimary : textSecondary,
                     fontWeight: FontWeight.w500,
-
                     fontSize: kIsWeb ? 18.sp : 14.sp,
-
                   ),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
