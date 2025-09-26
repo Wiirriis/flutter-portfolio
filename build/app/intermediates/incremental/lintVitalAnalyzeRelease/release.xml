@@ -1,0 +1,37 @@
+<variant
+    name="release"
+    package="com.cesarpolanco.portfolioflutter"
+    minSdkVersion="21"
+    targetSdkVersion="33"
+    shrinking="true"
+    mergedManifest="C:\repos\frontend\flutter-portfolio2\build\app\intermediates\merged_manifest\release\processReleaseMainManifest\AndroidManifest.xml"
+    proguardFiles="C:\repos\frontend\flutter-portfolio2\build\app\intermediates\default_proguard_files\global\proguard-android.txt-8.6.0;C:\flutter\packages\flutter_tools\gradle\flutter_proguard_rules.pro;proguard-rules.pro"
+    partialResultsDir="C:\repos\frontend\flutter-portfolio2\build\app\intermediates\lint_vital_partial_results\release\lintVitalAnalyzeRelease\out"
+    desugaredMethodsFiles="C:\Users\ASUS\.gradle\caches\transforms-4\dc371af994b1fd999681949c66375cc7\transformed\D8BackportedDesugaredMethods.txt">
+  <buildFeatures
+      namespacing="REQUIRED"/>
+  <sourceProviders>
+    <sourceProvider
+        manifests="src\main\AndroidManifest.xml"
+        javaDirectories="src\main\java;src\main\kotlin;src\release\java;src\release\kotlin"
+        resDirectories="src\main\res;src\release\res"
+        assetsDirectories="src\main\assets;src\release\assets"/>
+  </sourceProviders>
+  <testSourceProviders>
+  </testSourceProviders>
+  <testFixturesSourceProviders>
+  </testFixturesSourceProviders>
+  <manifestPlaceholders>
+    <placeholder
+        name="applicationName"
+        value="android.app.Application" />
+  </manifestPlaceholders>
+  <artifact
+      classOutputs="C:\repos\frontend\flutter-portfolio2\build\app\intermediates\javac\release\compileReleaseJavaWithJavac\classes;C:\repos\frontend\flutter-portfolio2\build\app\tmp\kotlin-classes\release;C:\repos\frontend\flutter-portfolio2\build\app\kotlinToolingMetadata;C:\repos\frontend\flutter-portfolio2\build\app\intermediates\compile_and_runtime_not_namespaced_r_class_jar\release\processReleaseResources\R.jar"
+      type="MAIN"
+      applicationId="com.cesarpolanco.portfolioflutter"
+      generatedSourceFolders="C:\repos\frontend\flutter-portfolio2\build\app\generated\ap_generated_sources\release\out"
+      generatedResourceFolders="C:\repos\frontend\flutter-portfolio2\build\app\generated\res\resValues\release"
+      desugaredMethodsFiles="C:\Users\ASUS\.gradle\caches\transforms-4\dc371af994b1fd999681949c66375cc7\transformed\D8BackportedDesugaredMethods.txt">
+  </artifact>
+</variant>

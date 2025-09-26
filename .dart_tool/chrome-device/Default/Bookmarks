@@ -1,0 +1,169 @@
+{
+   "checksum": "ee11ce5a35ac262c6e731cc2316c853b",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "children": [  ],
+            "date_added": "13240372590505325",
+            "date_last_used": "0",
+            "date_modified": "13240372590505325",
+            "guid": "0ddeee1c-c031-4120-9f6f-7b5aa4d795a8",
+            "id": "9",
+            "name": "Barra de favoritos",
+            "source": "unknown",
+            "type": "folder"
+         }, {
+            "children": [  ],
+            "date_added": "13240372590505604",
+            "date_last_used": "0",
+            "date_modified": "13240372590505604",
+            "guid": "0944359c-fdda-4e8c-a45b-be15b37c57fe",
+            "id": "10",
+            "name": "Vínculos",
+            "source": "unknown",
+            "type": "folder"
+         }, {
+            "date_added": "13223244456208497",
+            "date_last_used": "0",
+            "guid": "b36b754c-a0a9-48af-a968-a6720e095b2e",
+            "id": "11",
+            "name": "Bing",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "http://go.microsoft.com/fwlink/p/?LinkId=255142",
+            "visit_count": 0
+         }, {
+            "date_added": "13223244456245090",
+            "date_last_used": "0",
+            "guid": "53dc62bf-e283-4873-8e1e-6ecbd532e3f9",
+            "id": "12",
+            "name": "The NeoSmart Files",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "http://neosmart.net/blog/feed/",
+            "visit_count": 0
+         }, {
+            "children": [ {
+               "date_added": "13225393979516837",
+               "date_last_used": "0",
+               "guid": "0ffd869b-6b54-4637-892d-5167212a4ecc",
+               "id": "14",
+               "name": "Dell Auction",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "http://www.dellauction.com/",
+               "visit_count": 0
+            }, {
+               "date_added": "13225393979516837",
+               "date_last_used": "0",
+               "guid": "86ca375c-ad47-40e1-88c5-e9d5d0d09bbf",
+               "id": "15",
+               "name": "Dell",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "http://www1.la.dell.com/content/default.aspx?c=gt&l=es&s=gen",
+               "visit_count": 0
+            }, {
+               "date_added": "13225393979516837",
+               "date_last_used": "0",
+               "guid": "9e15b81e-855e-4a12-aec6-2bfd3cc914c1",
+               "id": "16",
+               "name": "Support.Dell.Com",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "http://www.dell.com/support/home",
+               "visit_count": 0
+            } ],
+            "date_added": "13287785826584193",
+            "date_last_used": "0",
+            "date_modified": "13287785826584193",
+            "guid": "f3fab2ed-ada5-4fa3-85c4-4bc883427d83",
+            "id": "13",
+            "name": "Dell",
+            "source": "unknown",
+            "type": "folder"
+         }, {
+            "date_added": "13336503551524793",
+            "date_last_used": "0",
+            "guid": "60342169-bf1c-46d5-adf3-cabea8167382",
+            "id": "17",
+            "name": "Tablero AA: tablero ágil - Jira",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://proinnova.atlassian.net/jira/software/projects/AA/boards/56?assignee=6297e7cf9582b8006fc5805c&selectedIssue=AA-658",
+            "visit_count": 0
+         }, {
+            "date_added": "13403401202107092",
+            "date_last_used": "0",
+            "guid": "47d1c09d-47df-4e12-a0b6-d7b2e366f81e",
+            "id": "8",
+            "name": "ASUS Software Portal - Exclusive technology",
+            "show_icon": false,
+            "source": "oem_preload",
+            "type": "url",
+            "url": "https://www.asus.com/Software-and-Innovations-Portal/",
+            "visit_count": 0
+         }, {
+            "date_added": "13403401202107000",
+            "date_last_used": "0",
+            "guid": "65947441-74a0-456a-bc63-fd936aadabb3",
+            "id": "7",
+            "name": "MyASUS Software - Get the best from ASUS PC",
+            "show_icon": false,
+            "source": "oem_preload",
+            "type": "url",
+            "url": "https://www.asus.com/ASUS-Software/",
+            "visit_count": 0
+         }, {
+            "date_added": "13403401202106735",
+            "date_last_used": "0",
+            "guid": "c3e72698-5f29-4b45-911c-262310f5de33",
+            "id": "6",
+            "name": "McAfee LiveSafe",
+            "show_icon": false,
+            "source": "oem_preload",
+            "type": "url",
+            "url": "https://home.mcafee.com/root/campaign.aspx?cid=247829",
+            "visit_count": 0
+         } ],
+         "date_added": "13403401201879633",
+         "date_last_used": "0",
+         "date_modified": "13403401202107092",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Barra de favoritos",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13403401201879633",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "2",
+         "name": "Otros favoritos",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13403401201879633",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "3",
+         "name": "Favoritos móviles",
+         "source": "unknown",
+         "type": "folder"
+      }
+   },
+   "sync_metadata": "CjEKDgiIgQISCACrJoiZAQAAEgAqGHZZT3I1Y3krZmxXekVVNEJDRGJrZFE9PUgDoAYHEq0BCBESqAEKHEY0cWFxQzVjazgyMm5EeWZkL0FsWk5GSkowaz0SJDYwMzQyMTY5LWJmMWMtNDZkNS1hZGYzLWNhYmVhODE2NzM4MhgAIAAoADCq1NTCjjM4kdWMl7cxQJHVjJe3MUocQllVUkVRRUhXdEtSYjkwRC9GZldObVJDeEYwPVofIh32Wm8wTmt1Ym1HbkJsZDJmRExLTytVVEIrak00PWXvw2irwj4CYAUSrAEIEBKnAQocaG1KMTlTaWRWY3p5RzI0WlNTMHVCc1VWVFlVPRIkOWUxNWI4MWUtODU1ZS00YTEyLWFlYzYtMmJmZDNjYzkxNGMxGAAgACgAMOfGqujpLzj/qazo6S9A/6ms6OkvShxaVDZQSXlvV05GcG1XRlgrOFcrd3g2eGI2Nmc9Wh4iHFZvdm1Hbk1sU01wbzhzZzJiY1N2ZklMdGpKST1lAAAAAMI+AmAFEq0BCA0SqAEKHDRRdTZ1TzIrOGtvVzY4NGhFZjBHMFNWRitNOD0SJGYzZmFiMmVkLWFkYTUtNGZhMy04NWM0LTRiYzg4MzQyN2Q4MxgAIAAoADDnxqro6S84gqms6OkvQIKprOjpL0ocZmp5QUU5UllWb0lSZHNCSDIzbFl6YldTNC9jPVofIh3sRkI4UVgwa1JGcjUzR0Z2NmIwY2ZncmRWNlgwPWUAAAAAwj4CYAASrAEIDhKnAQocWG9mdTdLYndDQjVzcmNVYzhQS0lveGM5U1JjPRIkMGZmZDg2OWItNmI1NC00NjM3LTg5MmQtNTE2NzIxMmE0ZWNjGAAgACgAMOfGqujpLzjsqqzo6S9A7Kqs6OkvShxkMXBvd1RyMnNJL2JBdCtodElJMWNHN1BlSWc9Wh4iHEpVamp3NU5YSkdsS0NpanJqNFFDYmZLUi9Qbz1lAAAAAMI+AmAFEq0BCAwSqAEKHElpU1NWVi9tdHFzbFAvL1ZnV1JMMWJvY3dHZz0SJDRmOThkYWViLWU2MTktNDVmYS1iMTE1LTEzOTljYmUxNmNhORgAIAAoADDnxqro6S84xqKs6OkvQMairOjpL0ocdFRmVFo3akZ4cTJQU05TQWVxc1FSUXU3MnE4PVofIh3YTW1ReFNCOWJWUlpYb25sYURyTTVOZTVjREtNPWUAAAAAwj4CYAUSrQEICxKoAQoceWkxbk5OSi9Ta1hYaGxGOE5BMzFpSkFjV3ZRPRIkZTRlZTI0MmItMjVmZC00NzMzLThmYTQtNGQzMTI0ZGFkOGJhGAAgACgAMMe5+pe5Ljjloqzo6S9A5aKs6OkvShxiU0FTZlduMHN0eG90TytYNXh6cTlFd2o5Mms9Wh8iHbE0OVlxZjZ5cys1WVlaaTZ3S1BXUHVDNzFLY0k9ZQAAAADCPgJgBRKsAQgPEqcBChxuNUE0UThQN2sydlpabk85bU1ET2NJYzRqTmc9EiQ4NmNhMzc1Yy1hZDQ3LTQwZTEtODhjNS1lOWQ1ZDBkMDliYmYYACAAKAAw58aq6OkvOJ6qrOjpL0Ceqqzo6S9KHHVEZnFHaHNjYm8yUTE1UTVQUTBoVkRFYkZIOD1aHiIcS0tPbkNZcjFkWGRGdVB5Q1ZacDNxZlUwc0lNPWUAAAAAwj4CYAUSjgEIAxKJAQocbmpnRHU4OGVDcnZYcDg2cEQ3ZkhHY3FGcDg4PRIkYWNkZDg5ODgtNDAyNy01MmE3LThlNDktZDdiYzEwZWRhNDAyGAAgACgAMOPJtZGuLjj4oazo6S9A+KGs6OkvShx5ek5CMDFjbjU0QTdjUlUwdVQrL1BnbVR0VW89WgBlAAAAAMI+AmAAEqwBCAoSpwEKHGVuQk1nUWNweU5qQ1BQTG43bmU1N1YzVk51Zz0SJGEyNWIxZDg4LWY1ZmEtNGVlZi1iMGQ3LWQzZDU2YjU2MDg0YRgAIAAoADDEufqXuS44l6Ks6OkvQJeirOjpL0ocN1RJRUVhNDUwRGhtMWdxOGxwY1VYMHVLVTVjPVoeIhxia0dFNFpBaXFLRFMxbEdoZjRPODBrRDBveHM9ZQAAAADCPgJgABKsAQgJEqcBChxPWG1BY0dhcmhFOUZ5eDVKaSsxRmt6czB5ZUU9EiQ4MTVkZGUwMC1lNGFjLTRiYzEtOTI5OS00NGFhN2I1ZmU5NTMYACAAKAAwxbn6l7kuOKeirOjpL0Cnoqzo6S9KHE9SSEN5UUZUSHVVcXljUWcvS254enV0VjAvWT1aHiIcRnBSZ2dMR0FOMzgvRkRNNENjOWUwRmRidUlZPWUAAAAAwj4CYAASjgEIARKJAQoceXhKLzZmdmtlY3I3a3A1RVF6QjR0V0xwZGJFPRIkZWZiOTVmOGEtYTFhNy01NDcyLWJjNmQtNTExYjQyNDIzOTJhGAAgACgAMN7JtZGuLjjroKzo6S9A66Cs6OkvShxhUkNXTGdoRjliNUlucUtJRHZ1Si9qdlFrRmM9WgBlAAAAAMI+AmAAEo4BCAISiQEKHFljU1RvbnZFU1B3cUNzNEwyY3JWaHY2OEw5OD0SJDRiNTBiY2M1LTU5MzctNTNhMi1hZjdhLWE3Y2QyY2I5YzMxYhgAIAAoADDfybWRri44iqGs6OkvQIqhrOjpL0ocb1BWa2h3QlJiVjY1S0NXUjIrSU9OSFdvT3U4PVoAZQAAAADCPgJgADAAOAA=",
+   "version": 1
+}

@@ -1,0 +1,38 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.cesarpolanco.portfolioflutter.app-mergeReleaseResources-18:/values-night-v8/values-night-v8.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-4\\a42305d7b11315e4cab2847091d9c7ec\\transformed\\jetified-android-pdf-viewer-3.2.0-beta05\\res\\values-night-v8\\values-night-v8.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,101,148,199,245",
+                        "endColumns": "45,46,50,45,49",
+                        "endOffsets": "96,143,194,240,290"
+                    }
+                },
+                {
+                    "source": "C:\\repos\\frontend\\flutter-portfolio2\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "from": {
+                        "startLines": "3,14",
+                        "startColumns": "4,4",
+                        "startOffsets": "175,831",
+                        "endLines": "7,16",
+                        "endColumns": "12,12",
+                        "endOffsets": "482,997"
+                    },
+                    "to": {
+                        "startLines": "7,11",
+                        "startColumns": "4,4",
+                        "startOffsets": "295,476",
+                        "endLines": "10,13",
+                        "endColumns": "12,12",
+                        "endOffsets": "471,640"
+                    }
+                }
+            ]
+        }
+    ]
+}
