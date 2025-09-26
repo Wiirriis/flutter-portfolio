@@ -20,8 +20,12 @@ void main() {
 
     // Verify that navigation buttons are present.
     expect(find.text('Sobre mí'), findsOneWidget);
-    expect(find.text('Proyectos'), findsOneWidget);
+    expect(find.text('Proyectos'), findsWidgets); // Multiple instances expected
     expect(find.text('Contacto'), findsOneWidget);
     expect(find.text('CV/Resume'), findsOneWidget);
+
+    // Verify unique texts on home screen.
+    expect(find.text('Navegación rápida'), findsOneWidget);
+    expect(find.text('Senior Software Developer'), findsOneWidget);
   });
 }
