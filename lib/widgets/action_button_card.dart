@@ -35,50 +35,73 @@ class ActionButtonCard extends StatelessWidget {
   }
 
   Widget _buildWebCard() {
-    return GestureDetector(
-      onTap: enabled ? onTap : null,
-      child: Container(
-        height: 100,
-        decoration: BoxDecoration(
-          color: enabled ? Colors.white : const Color(0xFFF5F5F5),
-          borderRadius: BorderRadius.circular(12),
-          border: Border.all(
-            color: enabled ? const Color(0xFFE0E0E0) : const Color(0xFFBDBDBD),
-            width: 1,
-          ),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              width: 56,
-              height: 56,
-              decoration: BoxDecoration(
-                color: enabled ? const Color(0xFFE8F5E8) : const Color(0xFFF5F5F5),
-                borderRadius: BorderRadius.circular(28),
-              ),
-              child: Icon(
-                icon,
-                size: 28,
-                color: enabled ? primaryColor : textSecondary,
-              ),
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: enabled ? onTap : null,
+        borderRadius: BorderRadius.circular(12.r),
+        child: Container(
+          height: 100.h,
+          decoration: BoxDecoration(
+            color: enabled
+                ? (backgroundColor ?? cardColor)
+                : cardColor.withOpacity(0.5),
+            borderRadius: BorderRadius.circular(12.r),
+            boxShadow: [
+              if (enabled)
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.08),
+                  offset: Offset(0, 2.h),
+                  blurRadius: 8.r,
+                  spreadRadius: 0,
+                ),
+            ],
+            border: Border.all(
+              color: enabled ? primaryColor.withOpacity(0.1) : dividerColor,
+              width: 1,
             ),
-            const SizedBox(height: 8),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8),
-              child: Text(
-                title,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: enabled ? textPrimary : textSecondary,
-                  fontWeight: FontWeight.w500,
-                  fontSize: 16,
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                width: kIsWeb ? 60.w : 40.w,
+                height: kIsWeb ? 60.h : 40.h,
+                decoration: BoxDecoration(
+                  color: enabled
+                      ? (iconColor ?? primaryColor).withOpacity(0.1)
+                      : dividerColor.withOpacity(0.3),
+                  borderRadius: BorderRadius.circular(24.r),
+                ),
+                child: Icon(
+                  icon,
+                  size: kIsWeb ? 30.w : 20.w,
+                  color: enabled
+                      ? (iconColor ?? primaryColor)
+                      : textSecondary,
                 ),
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
               ),
-            ),
-          ],
+              SizedBox(height: 8.h),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8.w),
+                child: Text(
+                  title,
+                  textAlign: TextAlign.center,
+                  style: subtitle2.copyWith(
+                    color: enabled ? textPrimary : textSecondary,
+                    fontWeight: FontWeight.w500,
+
+                    fontSize: kIsWeb ? 18.sp : 14.sp,
+
+                  ),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -115,8 +138,8 @@ class ActionButtonCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                width: 48.w,
-                height: 48.h,
+                width: kIsWeb ? 60.w : 48.w,
+                height: kIsWeb ? 60.h : 48.h,
                 decoration: BoxDecoration(
                   color: enabled
                       ? (iconColor ?? primaryColor).withOpacity(0.1)
@@ -125,7 +148,7 @@ class ActionButtonCard extends StatelessWidget {
                 ),
                 child: Icon(
                   icon,
-                  size: 24.w,
+                  size: kIsWeb ? 30.w : 24.w,
                   color: enabled
                       ? (iconColor ?? primaryColor)
                       : textSecondary,
@@ -140,7 +163,7 @@ class ActionButtonCard extends StatelessWidget {
                   style: subtitle2.copyWith(
                     color: enabled ? textPrimary : textSecondary,
                     fontWeight: FontWeight.w500,
-                    fontSize: 14.sp,
+                    fontSize: kIsWeb ? 18.sp : 14.sp,
                   ),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
