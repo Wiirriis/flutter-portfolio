@@ -8,6 +8,7 @@ import 'screens/about_screen.dart';
 import 'screens/experience_screen.dart';
 import 'screens/skills_screen.dart';
 import 'screens/projects_screen.dart';
+import 'screens/cv_screen.dart';
 import 'core/theme/colors.dart';
 
 void main() {
@@ -72,6 +73,7 @@ class MyApp extends StatelessWidget {
             '/experience': (context) => const ExperienceScreen(),
             '/skills': (context) => const SkillsScreen(),
             '/projects': (context) => const ProjectsScreen(),
+            '/cv': (context) => const CVScreen(),
           },
         );
       },

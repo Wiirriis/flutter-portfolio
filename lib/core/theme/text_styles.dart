@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'colors.dart';
 
 double _getWebScale() {
-  return kIsWeb ? 0.65 : 1.0;
+  return kIsWeb ? 1.2 : 1.0;
 }
 
 final TextStyle title1 = TextStyle(

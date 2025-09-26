@@ -66,7 +66,7 @@ class HomeScreen extends StatelessWidget {
           Text(
             'Explora mi portafolio de desarrollo',
             style: TextStyle(
-              fontSize: kIsWeb ? 14.sp : 16.sp,
+              fontSize: kIsWeb ? 18.sp : 16.sp,
               color: Colors.white.withOpacity(0.9),
             ),
           ),
@@ -82,14 +82,14 @@ class HomeScreen extends StatelessWidget {
               children: [
                 Icon(
                   Icons.code,
-                  size: 16.w,
+                  size: kIsWeb ? 20.w : 16.w,
                   color: Colors.white,
                 ),
                 SizedBox(width: 8.w),
                 Text(
                   'Senior Software Developer',
                   style: TextStyle(
-                    fontSize: kIsWeb ? 12.sp : 14.sp,
+                    fontSize: kIsWeb ? 16.sp : 14.sp,
                     color: Colors.white,
                     fontWeight: FontWeight.w500,
                   ),
@@ -154,7 +154,7 @@ class HomeScreen extends StatelessWidget {
         children: [
           Icon(
             icon,
-            size: 24.w,
+            size: kIsWeb ? 32.w : 24.w,
             color: primaryColor,
           ),
           SizedBox(height: 8.h),
@@ -224,7 +224,7 @@ class HomeScreen extends StatelessWidget {
         ActionButtonCard(
           title: 'CV/Resume',
           icon: Icons.description_outlined,
-          onTap: () {},
+          onTap: () => Navigator.pushNamed(context, '/cv'),
         ),
       ],
     );
@@ -268,7 +268,7 @@ class HomeScreen extends StatelessWidget {
             ActionButtonCard(
               title: 'CV/Resume',
               icon: Icons.description_outlined,
-              onTap: () {},
+              onTap: () => Navigator.pushNamed(context, '/cv'),
             ),
           ],
         ),
@@ -294,7 +294,7 @@ class HomeScreen extends StatelessWidget {
               child: Text(
                 'Ver todos',
                 style: TextStyle(
-                  fontSize: kIsWeb ? 12.sp : 14.sp,
+                  fontSize: kIsWeb ? 16.sp : 14.sp,
                   color: primaryColor,
                   fontWeight: FontWeight.w500,
                 ),
@@ -357,7 +357,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   child: Icon(
                     Icons.smartphone,
-                    size: 20.w,
+                    size: kIsWeb ? 28.w : 20.w,
                     color: primaryColor,
                   ),
                 ),
@@ -392,7 +392,7 @@ class HomeScreen extends StatelessWidget {
             child: Text(
               tech,
               style: TextStyle(
-                fontSize: kIsWeb ? 10.sp : 12.sp,
+                fontSize: kIsWeb ? 14.sp : 12.sp,
                 color: textSecondary,
               ),
             ),
