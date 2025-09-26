@@ -27,70 +27,145 @@ class ActionButtonCard extends StatelessWidget {
     return Expanded(
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 4.w),
-        child: Material(
-          color: Colors.transparent,
-          child: InkWell(
-            onTap: enabled ? onTap : null,
+        child: kIsWeb
+            ? _buildWebCard()
+            : _buildMobileCard(),
+      ),
+    );
+  }
+
+  Widget _buildWebCard() {
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: enabled ? onTap : null,
+        borderRadius: BorderRadius.circular(12.r),
+        child: Container(
+          height: 100.h,
+          decoration: BoxDecoration(
+            color: enabled
+                ? (backgroundColor ?? cardColor)
+                : cardColor.withOpacity(0.5),
             borderRadius: BorderRadius.circular(12.r),
-            child: Container(
-              height: kIsWeb ? 100.h : 120.h,
-              decoration: BoxDecoration(
-                color: enabled
-                    ? (backgroundColor ?? cardColor)
-                    : cardColor.withOpacity(0.5),
-                borderRadius: BorderRadius.circular(12.r),
-                boxShadow: [
-                  if (enabled)
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.08),
-                      offset: Offset(0, 2.h),
-                      blurRadius: 8.r,
-                      spreadRadius: 0,
-                    ),
-                ],
-                border: Border.all(
-                  color: enabled ? primaryColor.withOpacity(0.1) : dividerColor,
-                  width: 1,
+            boxShadow: [
+              if (enabled)
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.08),
+                  offset: Offset(0, 2.h),
+                  blurRadius: 8.r,
+                  spreadRadius: 0,
+                ),
+            ],
+            border: Border.all(
+              color: enabled ? primaryColor.withOpacity(0.1) : dividerColor,
+              width: 1,
+            ),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                width: kIsWeb ? 60.w : 40.w,
+                height: kIsWeb ? 60.h : 40.h,
+                decoration: BoxDecoration(
+                  color: enabled
+                      ? (iconColor ?? primaryColor).withOpacity(0.1)
+                      : dividerColor.withOpacity(0.3),
+                  borderRadius: BorderRadius.circular(24.r),
+                ),
+                child: Icon(
+                  icon,
+                  size: kIsWeb ? 30.w : 20.w,
+                  color: enabled
+                      ? (iconColor ?? primaryColor)
+                      : textSecondary,
                 ),
               ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: kIsWeb ? 56.w : 48.w,
-                    height: kIsWeb ? 56.h : 48.h,
-                    decoration: BoxDecoration(
-                      color: enabled
-                          ? (iconColor ?? primaryColor).withOpacity(0.1)
-                          : dividerColor.withOpacity(0.3),
-                      borderRadius: BorderRadius.circular(24.r),
-                    ),
-                    child: Icon(
-                      icon,
-                      size: kIsWeb ? 28.w : 24.w,
-                      color: enabled
-                          ? (iconColor ?? primaryColor)
-                          : textSecondary,
-                    ),
+              SizedBox(height: 8.h),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8.w),
+                child: Text(
+                  title,
+                  textAlign: TextAlign.center,
+                  style: subtitle2.copyWith(
+                    color: enabled ? textPrimary : textSecondary,
+                    fontWeight: FontWeight.w500,
+                    fontSize: kIsWeb ? 18.sp : 14.sp,
                   ),
-                  SizedBox(height: 8.h),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 8.w),
-                    child: Text(
-                      title,
-                      textAlign: TextAlign.center,
-                      style: subtitle2.copyWith(
-                        color: enabled ? textPrimary : textSecondary,
-                        fontWeight: FontWeight.w500,
-                        fontSize: kIsWeb ? 16.sp : 14.sp,
-                      ),
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ),
-                ],
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
               ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildMobileCard() {
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: enabled ? onTap : null,
+        borderRadius: BorderRadius.circular(12.r),
+        child: Container(
+          height: 120.h,
+          decoration: BoxDecoration(
+            color: enabled
+                ? (backgroundColor ?? cardColor)
+                : cardColor.withOpacity(0.5),
+            borderRadius: BorderRadius.circular(12.r),
+            boxShadow: [
+              if (enabled)
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.08),
+                  offset: Offset(0, 2.h),
+                  blurRadius: 8.r,
+                  spreadRadius: 0,
+                ),
+            ],
+            border: Border.all(
+              color: enabled ? primaryColor.withOpacity(0.1) : dividerColor,
+              width: 1,
             ),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                width: kIsWeb ? 60.w : 48.w,
+                height: kIsWeb ? 60.h : 48.h,
+                decoration: BoxDecoration(
+                  color: enabled
+                      ? (iconColor ?? primaryColor).withOpacity(0.1)
+                      : dividerColor.withOpacity(0.3),
+                  borderRadius: BorderRadius.circular(24.r),
+                ),
+                child: Icon(
+                  icon,
+                  size: kIsWeb ? 30.w : 24.w,
+                  color: enabled
+                      ? (iconColor ?? primaryColor)
+                      : textSecondary,
+                ),
+              ),
+              SizedBox(height: 8.h),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8.w),
+                child: Text(
+                  title,
+                  textAlign: TextAlign.center,
+                  style: subtitle2.copyWith(
+                    color: enabled ? textPrimary : textSecondary,
+                    fontWeight: FontWeight.w500,
+                    fontSize: kIsWeb ? 18.sp : 14.sp,
+                  ),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+            ],
           ),
         ),
       ),

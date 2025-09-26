@@ -265,8 +265,15 @@ class _ContactScreenState extends State<ContactScreen> {
             // Launch maps app
           },
         ),
-        SizedBox(height: 24.h),
-        _buildSocialMedia(),
+        SizedBox(height: 12.h),
+        _buildContactInfoItem(
+          icon: Icons.link_outlined,
+          title: 'LinkedIn',
+          subtitle: 'www.linkedin.com/in/cesar-polanco/',
+          onTap: () {
+            // Launch LinkedIn
+          },
+        ),
       ],
     );
   }
@@ -315,97 +322,6 @@ class _ContactScreenState extends State<ContactScreen> {
     );
   }
 
-  Widget _buildSocialMedia() {
-    return Container(
-      padding: EdgeInsets.all(20.w),
-      decoration: BoxDecoration(
-        color: cardColor,
-        borderRadius: BorderRadius.circular(16.r),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.05),
-            offset: Offset(0, 2.h),
-            blurRadius: 8.r,
-          ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Redes sociales',
-            style: subtitle1,
-          ),
-          SizedBox(height: 16.h),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              _buildSocialButton(
-                icon: Icons.link,
-                label: 'LinkedIn',
-                onTap: () {
-                  // Open LinkedIn: www.linkedin.com/in/cesar-polanco/
-                },
-              ),
-              _buildSocialButton(
-                icon: Icons.email,
-                label: 'Email',
-                onTap: () {
-                  // Open Email: cpolcam.yan@gmail.com
-                },
-              ),
-              _buildSocialButton(
-                icon: Icons.phone,
-                label: 'Teléfono',
-                onTap: () {
-                  // Call: +502 48044337
-                },
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildSocialButton({
-    required IconData icon,
-    required String label,
-    VoidCallback? onTap,
-  }) {
-    return InkWell(
-      onTap: onTap,
-      borderRadius: BorderRadius.circular(8.r),
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-        child: Column(
-          children: [
-            Container(
-              width: 40.w,
-              height: 40.h,
-              decoration: BoxDecoration(
-                color: primaryColor.withOpacity(0.1),
-                borderRadius: BorderRadius.circular(20.r),
-              ),
-              child: Icon(
-                icon,
-                size: 20.w,
-                color: primaryColor,
-              ),
-            ),
-            SizedBox(height: 8.h),
-            Text(
-              label,
-              style: TextStyle(
-                fontSize: 12.sp,
-                color: textSecondary,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
 
   void _submitForm() {
     if (_formKey.currentState!.validate()) {
