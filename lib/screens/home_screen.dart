@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../core/theme/colors.dart';
@@ -19,17 +20,24 @@ class HomeScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(20.w),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _buildWelcomeSection(),
-            SizedBox(height: 32.h),
-            _buildStatsCards(),
-            SizedBox(height: 32.h),
-            _buildActionButtons(context),
-            SizedBox(height: 32.h),
-            _buildRecentProjects(context),
-          ],
+        child: Center(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              maxWidth: kIsWeb ? 1200 : double.infinity,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                _buildWelcomeSection(),
+                SizedBox(height: 32.h),
+                _buildStatsCards(),
+                SizedBox(height: 32.h),
+                _buildActionButtons(context),
+                SizedBox(height: 32.h),
+                _buildRecentProjects(context),
+              ],
+            ),
+          ),
         ),
       ),
     );
@@ -58,7 +66,7 @@ class HomeScreen extends StatelessWidget {
           Text(
             'Explora mi portafolio de desarrollo',
             style: TextStyle(
-              fontSize: 16.sp,
+              fontSize: kIsWeb ? 14.sp : 16.sp,
               color: Colors.white.withOpacity(0.9),
             ),
           ),
@@ -81,7 +89,7 @@ class HomeScreen extends StatelessWidget {
                 Text(
                   'Senior Software Developer',
                   style: TextStyle(
-                    fontSize: 14.sp,
+                    fontSize: kIsWeb ? 12.sp : 14.sp,
                     color: Colors.white,
                     fontWeight: FontWeight.w500,
                   ),
@@ -172,28 +180,75 @@ class HomeScreen extends StatelessWidget {
           style: title2,
         ),
         SizedBox(height: 16.h),
+        kIsWeb
+            ? _buildWebActionGrid(context)
+            : _buildMobileActionRows(context),
+      ],
+    );
+  }
+
+  Widget _buildWebActionGrid(BuildContext context) {
+    return GridView.count(
+      crossAxisCount: 3,
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      childAspectRatio: 1.2,
+      crossAxisSpacing: 16.w,
+      mainAxisSpacing: 16.h,
+      children: [
+        ActionButtonCard(
+          title: 'Sobre mí',
+          icon: Icons.person_outline,
+          onTap: () => Navigator.pushNamed(context, '/about'),
+        ),
+        ActionButtonCard(
+          title: 'Proyectos',
+          icon: Icons.work_outline,
+          onTap: () => Navigator.pushNamed(context, '/projects'),
+        ),
+        ActionButtonCard(
+          title: 'Contacto',
+          icon: Icons.mail_outline,
+          onTap: () => Navigator.pushNamed(context, '/contact'),
+        ),
+        ActionButtonCard(
+          title: 'Habilidades',
+          icon: Icons.code_outlined,
+          onTap: () => Navigator.pushNamed(context, '/skills'),
+        ),
+        ActionButtonCard(
+          title: 'Catalogo',
+          icon: Icons.timeline_outlined,
+          onTap: () => Navigator.pushNamed(context, '/experience'),
+        ),
+        ActionButtonCard(
+          title: 'CV/Resume',
+          icon: Icons.description_outlined,
+          onTap: () {},
+        ),
+      ],
+    );
+  }
+
+  Widget _buildMobileActionRows(BuildContext context) {
+    return Column(
+      children: [
         Row(
           children: [
             ActionButtonCard(
               title: 'Sobre mí',
               icon: Icons.person_outline,
-              onTap: () {
-                Navigator.pushNamed(context, '/about');
-              },
+              onTap: () => Navigator.pushNamed(context, '/about'),
             ),
             ActionButtonCard(
               title: 'Proyectos',
               icon: Icons.work_outline,
-              onTap: () {
-                Navigator.pushNamed(context, '/projects');
-              },
+              onTap: () => Navigator.pushNamed(context, '/projects'),
             ),
             ActionButtonCard(
               title: 'Contacto',
               icon: Icons.mail_outline,
-              onTap: () {
-                Navigator.pushNamed(context, '/contact');
-              },
+              onTap: () => Navigator.pushNamed(context, '/contact'),
             ),
           ],
         ),
@@ -203,23 +258,17 @@ class HomeScreen extends StatelessWidget {
             ActionButtonCard(
               title: 'Habilidades',
               icon: Icons.code_outlined,
-              onTap: () {
-                Navigator.pushNamed(context, '/skills');
-              },
+              onTap: () => Navigator.pushNamed(context, '/skills'),
             ),
             ActionButtonCard(
               title: 'Catalogo',
               icon: Icons.timeline_outlined,
-              onTap: () {
-                Navigator.pushNamed(context, '/experience');
-              },
+              onTap: () => Navigator.pushNamed(context, '/experience'),
             ),
             ActionButtonCard(
               title: 'CV/Resume',
               icon: Icons.description_outlined,
-              onTap: () {
-                // Navigate to resume page
-              },
+              onTap: () {},
             ),
           ],
         ),
@@ -245,7 +294,7 @@ class HomeScreen extends StatelessWidget {
               child: Text(
                 'Ver todos',
                 style: TextStyle(
-                  fontSize: 14.sp,
+                  fontSize: kIsWeb ? 12.sp : 14.sp,
                   color: primaryColor,
                   fontWeight: FontWeight.w500,
                 ),
@@ -343,7 +392,7 @@ class HomeScreen extends StatelessWidget {
             child: Text(
               tech,
               style: TextStyle(
-                fontSize: 12.sp,
+                fontSize: kIsWeb ? 10.sp : 12.sp,
                 color: textSecondary,
               ),
             ),

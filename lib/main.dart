@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,13 +19,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Lock orientation to portrait
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-    ]);
+    // Lock orientation to portrait only on mobile
+    if (!kIsWeb) {
+      SystemChrome.setPreferredOrientations([
+        DeviceOrientation.portraitUp,
+      ]);
+    }
 
     return ScreenUtilInit(
-      designSize: const Size(375, 812), // iPhone X dimensions
+      designSize: kIsWeb
+          ? const Size(1440, 900) // Web dimensions
+          : const Size(375, 812), // iPhone X dimensions for mobile
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
