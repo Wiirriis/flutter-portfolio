@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../core/theme/colors.dart';
@@ -32,7 +33,7 @@ class ActionButtonCard extends StatelessWidget {
             onTap: enabled ? onTap : null,
             borderRadius: BorderRadius.circular(12.r),
             child: Container(
-              height: 120.h,
+              height: kIsWeb ? 100.h : 120.h,
               decoration: BoxDecoration(
                 color: enabled
                     ? (backgroundColor ?? cardColor)
@@ -56,8 +57,8 @@ class ActionButtonCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    width: 48.w,
-                    height: 48.h,
+                    width: kIsWeb ? 56.w : 48.w,
+                    height: kIsWeb ? 56.h : 48.h,
                     decoration: BoxDecoration(
                       color: enabled
                           ? (iconColor ?? primaryColor).withOpacity(0.1)
@@ -66,7 +67,7 @@ class ActionButtonCard extends StatelessWidget {
                     ),
                     child: Icon(
                       icon,
-                      size: 24.w,
+                      size: kIsWeb ? 28.w : 24.w,
                       color: enabled
                           ? (iconColor ?? primaryColor)
                           : textSecondary,
@@ -81,7 +82,7 @@ class ActionButtonCard extends StatelessWidget {
                       style: subtitle2.copyWith(
                         color: enabled ? textPrimary : textSecondary,
                         fontWeight: FontWeight.w500,
-                        fontSize: 14.sp,
+                        fontSize: kIsWeb ? 16.sp : 14.sp,
                       ),
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
