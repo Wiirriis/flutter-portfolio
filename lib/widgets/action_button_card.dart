@@ -46,7 +46,7 @@ class ActionButtonCard extends StatelessWidget {
               height: cardHeight,
               decoration: BoxDecoration(
                 color: enabled
-                    ? (backgroundColor ?? cardColor)
+                    ? (backgroundColor ?? (kIsWeb ? Colors.red : cardColor))
                     : cardColor.withOpacity(0.5),
                 borderRadius: BorderRadius.circular(12),
                 boxShadow: [
@@ -75,13 +75,23 @@ class ActionButtonCard extends StatelessWidget {
                           : dividerColor.withOpacity(0.3),
                       borderRadius: BorderRadius.circular(iconContainerSize / 2),
                     ),
-                    child: Icon(
-                      icon,
-                      size: iconSize,
-                      color: enabled
-                          ? (iconColor ?? primaryColor)
-                          : textSecondary,
-                    ),
+                    child: kIsWeb
+                        ? Text(
+                            "◉", // Simple circle character
+                            style: TextStyle(
+                              fontSize: iconSize,
+                              color: enabled
+                                  ? (iconColor ?? primaryColor)
+                                  : textSecondary,
+                            ),
+                          )
+                        : Icon(
+                            icon,
+                            size: iconSize,
+                            color: enabled
+                                ? (iconColor ?? primaryColor)
+                                : textSecondary,
+                          ),
                   ),
                   const SizedBox(height: 8),
                   Padding(
