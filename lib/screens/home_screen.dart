@@ -194,6 +194,56 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
+  Widget _buildWebNavigationCard({
+    required BuildContext context,
+    required String title,
+    required IconData icon,
+    required VoidCallback onTap,
+  }) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final isWeb = kIsWeb;
+    final isMobile = screenWidth < 768;
+
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: EdgeInsets.all(isWeb ? 16.0 : (isMobile ? 12.0 : 16.0)),
+        decoration: BoxDecoration(
+          color: cardColor,
+          borderRadius: BorderRadius.circular(12),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.05),
+              offset: const Offset(0, 2),
+              blurRadius: 8,
+            ),
+          ],
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              icon,
+              size: isWeb ? 32.0 : (isMobile ? 24.0 : 32.0),
+              color: primaryColor,
+            ),
+            SizedBox(height: isWeb ? 8.0 : (isMobile ? 6.0 : 8.0)),
+            Text(
+              title,
+              textAlign: TextAlign.center,
+              style: subtitle1.copyWith(
+                color: textPrimary,
+                fontWeight: FontWeight.w500,
+              ),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   Widget _buildActionButtons(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final isWeb = kIsWeb;
@@ -226,32 +276,38 @@ class HomeScreen extends StatelessWidget {
       crossAxisSpacing: spacing,
       mainAxisSpacing: spacing,
       children: [
-        ActionButtonCard(
+        _buildWebNavigationCard(
+          context: context,
           title: 'Sobre mí',
           icon: Icons.person_outline,
           onTap: () => Navigator.pushNamed(context, '/about'),
         ),
-        ActionButtonCard(
+        _buildWebNavigationCard(
+          context: context,
           title: 'Proyectos',
           icon: Icons.work_outline,
           onTap: () => Navigator.pushNamed(context, '/projects'),
         ),
-        ActionButtonCard(
+        _buildWebNavigationCard(
+          context: context,
           title: 'Contacto',
           icon: Icons.mail_outline,
           onTap: () => Navigator.pushNamed(context, '/contact'),
         ),
-        ActionButtonCard(
+        _buildWebNavigationCard(
+          context: context,
           title: 'Habilidades',
           icon: Icons.code_outlined,
           onTap: () => Navigator.pushNamed(context, '/skills'),
         ),
-        ActionButtonCard(
+        _buildWebNavigationCard(
+          context: context,
           title: 'Catalogo',
           icon: Icons.timeline_outlined,
           onTap: () => Navigator.pushNamed(context, '/experience'),
         ),
-        ActionButtonCard(
+        _buildWebNavigationCard(
+          context: context,
           title: 'CV/Resume',
           icon: Icons.description_outlined,
           onTap: () => Navigator.pushNamed(context, '/cv'),
