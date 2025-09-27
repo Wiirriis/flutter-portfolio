@@ -1,5 +1,5 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../core/theme/colors.dart';
 import '../core/theme/text_styles.dart';
 
@@ -23,27 +23,31 @@ class ActionButtonCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final isWeb = kIsWeb;
+    final isMobile = screenWidth < 768;
+
     return Expanded(
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 4.w),
+        margin: EdgeInsets.symmetric(horizontal: isWeb ? 8.0 : (isMobile ? 4.0 : 8.0)),
         child: Material(
           color: Colors.transparent,
           child: InkWell(
             onTap: enabled ? onTap : null,
-            borderRadius: BorderRadius.circular(12.r),
+            borderRadius: BorderRadius.circular(12),
             child: Container(
-              height: 120.h,
+              height: isWeb ? 120.0 : (isMobile ? 100.0 : 120.0),
               decoration: BoxDecoration(
                 color: enabled
                     ? (backgroundColor ?? cardColor)
                     : cardColor.withOpacity(0.5),
-                borderRadius: BorderRadius.circular(12.r),
+                borderRadius: BorderRadius.circular(12),
                 boxShadow: [
                   if (enabled)
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.08),
-                      offset: Offset(0, 2.h),
-                      blurRadius: 8.r,
+                      color: Colors.black.withOpacity(0.05),
+                      offset: const Offset(0, 2),
+                      blurRadius: 8,
                       spreadRadius: 0,
                     ),
                 ],
@@ -56,32 +60,32 @@ class ActionButtonCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    width: 48.w,
-                    height: 48.h,
+                    width: isWeb ? 48.0 : (isMobile ? 40.0 : 48.0),
+                    height: isWeb ? 48.0 : (isMobile ? 40.0 : 48.0),
                     decoration: BoxDecoration(
                       color: enabled
                           ? (iconColor ?? primaryColor).withOpacity(0.1)
                           : dividerColor.withOpacity(0.3),
-                      borderRadius: BorderRadius.circular(24.r),
+                      borderRadius: BorderRadius.circular(isWeb ? 24.0 : (isMobile ? 20.0 : 24.0)),
                     ),
                     child: Icon(
                       icon,
-                      size: 24.w,
+                      size: isWeb ? 24.0 : (isMobile ? 20.0 : 24.0),
                       color: enabled
                           ? (iconColor ?? primaryColor)
                           : textSecondary,
                     ),
                   ),
-                  SizedBox(height: 8.h),
+                  SizedBox(height: isWeb ? 8.0 : (isMobile ? 6.0 : 8.0)),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 8.w),
+                    padding: EdgeInsets.symmetric(horizontal: isWeb ? 8.0 : (isMobile ? 6.0 : 8.0)),
                     child: Text(
                       title,
                       textAlign: TextAlign.center,
                       style: subtitle2.copyWith(
                         color: enabled ? textPrimary : textSecondary,
                         fontWeight: FontWeight.w500,
-                        fontSize: 14.sp,
+                        fontSize: isWeb ? 14.0 : (isMobile ? 12.0 : 14.0),
                       ),
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
