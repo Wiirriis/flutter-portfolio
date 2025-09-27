@@ -47,21 +47,17 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildWelcomeSection(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final isWeb = kIsWeb;
-    final isMobile = screenWidth < 768;
-
+  Widget _buildWelcomeSection() {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(isWeb ? 20.0 : (isMobile ? 16.0 : 20.0)),
+      padding: EdgeInsets.all(20.w),
       decoration: BoxDecoration(
         gradient: const LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [primaryColor, primaryDark],
         ),
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(16.r),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -70,37 +66,34 @@ class HomeScreen extends StatelessWidget {
             '¡Bienvenido!',
             style: title2White,
           ),
-          SizedBox(height: isWeb ? 8.0 : (isMobile ? 6.0 : 8.0)),
+          SizedBox(height: 8.h),
           Text(
             'Explora mi portafolio de desarrollo',
             style: TextStyle(
-              fontSize: isWeb ? 18.0 : (isMobile ? 16.0 : 18.0),
+              fontSize: kIsWeb ? 18.sp : 16.sp,
               color: Colors.white.withOpacity(0.9),
             ),
           ),
-          SizedBox(height: isWeb ? 16.0 : (isMobile ? 12.0 : 16.0)),
+          SizedBox(height: 16.h),
           Container(
-            padding: EdgeInsets.symmetric(
-              horizontal: isWeb ? 16.0 : (isMobile ? 12.0 : 16.0),
-              vertical: isWeb ? 8.0 : (isMobile ? 6.0 : 8.0),
-            ),
+            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
             decoration: BoxDecoration(
               color: Colors.white.withOpacity(0.2),
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(20.r),
             ),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
                 Icon(
                   Icons.code,
-                  size: isWeb ? 20.0 : (isMobile ? 16.0 : 20.0),
+                  size: kIsWeb ? 20.w : 16.w,
                   color: Colors.white,
                 ),
-                SizedBox(width: isWeb ? 8.0 : (isMobile ? 6.0 : 8.0)),
+                SizedBox(width: 8.w),
                 Text(
                   'Senior Software Developer',
                   style: TextStyle(
-                    fontSize: isWeb ? 16.0 : (isMobile ? 14.0 : 16.0),
+                    fontSize: kIsWeb ? 16.sp : 14.sp,
                     color: Colors.white,
                     fontWeight: FontWeight.w500,
                   ),
@@ -113,34 +106,27 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildStatsCards(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final isMobile = screenWidth < 768;
-    final spacing = isMobile ? 12.0 : 16.0;
-
+  Widget _buildStatsCards() {
     return Row(
       children: [
         Expanded(
           child: _buildStatCard(
-            context: context,
             icon: Icons.work_outline,
             value: '8+',
             label: 'Proyectos',
           ),
         ),
-        SizedBox(width: spacing),
+        SizedBox(width: 16.w),
         Expanded(
           child: _buildStatCard(
-            context: context,
             icon: Icons.timeline,
             value: '5+',
             label: 'Años exp.',
           ),
         ),
-        SizedBox(width: spacing),
+        SizedBox(width: 16.w),
         Expanded(
           child: _buildStatCard(
-            context: context,
             icon: Icons.people_outline,
             value: '5K+',
             label: 'Usuarios',
@@ -151,25 +137,20 @@ class HomeScreen extends StatelessWidget {
   }
 
   Widget _buildStatCard({
-    required BuildContext context,
     required IconData icon,
     required String value,
     required String label,
   }) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final isWeb = kIsWeb;
-    final isMobile = screenWidth < 768;
-
     return Container(
-      padding: EdgeInsets.all(isWeb ? 16.0 : (isMobile ? 12.0 : 16.0)),
+      padding: EdgeInsets.all(16.w),
       decoration: BoxDecoration(
         color: cardColor,
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(12.r),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.05),
-            offset: const Offset(0, 2),
-            blurRadius: 8,
+            offset: Offset(0, 2.h),
+            blurRadius: 8.r,
           ),
         ],
       ),
@@ -177,10 +158,10 @@ class HomeScreen extends StatelessWidget {
         children: [
           Icon(
             icon,
-            size: isWeb ? 32.0 : (isMobile ? 24.0 : 32.0),
+            size: kIsWeb ? 32.w : 24.w,
             color: primaryColor,
           ),
-          SizedBox(height: isWeb ? 8.0 : (isMobile ? 6.0 : 8.0)),
+          SizedBox(height: 8.h),
           Text(
             value,
             style: title2.copyWith(color: primaryColor),
@@ -195,10 +176,6 @@ class HomeScreen extends StatelessWidget {
   }
 
   Widget _buildActionButtons(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final isWeb = kIsWeb;
-    final isMobile = screenWidth < 768;
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -206,8 +183,8 @@ class HomeScreen extends StatelessWidget {
           'Navegación rápida',
           style: title2,
         ),
-        SizedBox(height: isWeb ? 16.0 : (isMobile ? 12.0 : 16.0)),
-        isWeb
+        SizedBox(height: 16.h),
+        kIsWeb
             ? _buildWebActionGrid(context)
             : _buildMobileActionRows(context),
       ],
@@ -215,16 +192,13 @@ class HomeScreen extends StatelessWidget {
   }
 
   Widget _buildWebActionGrid(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final spacing = screenWidth > 1200 ? 16.0 : 12.0;
-
     return GridView.count(
       crossAxisCount: 3,
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       childAspectRatio: 1.2,
-      crossAxisSpacing: spacing,
-      mainAxisSpacing: spacing,
+      crossAxisSpacing: 16.w,
+      mainAxisSpacing: 16.h,
       children: [
         ActionButtonCard(
           title: 'Sobre mí',
@@ -261,9 +235,6 @@ class HomeScreen extends StatelessWidget {
   }
 
   Widget _buildMobileActionRows(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final spacing = screenWidth < 600 ? 12.0 : 16.0;
-
     return Column(
       children: [
         Row(
@@ -285,7 +256,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: spacing),
+        SizedBox(height: 16.h),
         Row(
           children: [
             ActionButtonCard(
@@ -310,10 +281,6 @@ class HomeScreen extends StatelessWidget {
   }
 
   Widget _buildRecentProjects(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final isWeb = kIsWeb;
-    final isMobile = screenWidth < 768;
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -331,7 +298,7 @@ class HomeScreen extends StatelessWidget {
               child: Text(
                 'Ver todos',
                 style: TextStyle(
-                  fontSize: isWeb ? 16.0 : (isMobile ? 14.0 : 16.0),
+                  fontSize: kIsWeb ? 16.sp : 14.sp,
                   color: primaryColor,
                   fontWeight: FontWeight.w500,
                 ),
@@ -339,23 +306,20 @@ class HomeScreen extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: isWeb ? 16.0 : (isMobile ? 12.0 : 16.0)),
+        SizedBox(height: 16.h),
         _buildProjectCard(
-          context: context,
           title: 'Bowpi - Fintech',
           description: 'Plataforma de Lending as a Service para créditos digitales',
           tech: 'Angular • Java Spring Boot • Docker',
         ),
-        SizedBox(height: isWeb ? 12.0 : (isMobile ? 8.0 : 12.0)),
+        SizedBox(height: 12.h),
         _buildProjectCard(
-          context: context,
           title: 'Agricontrol+',
           description: 'App para 500+ técnicos agrícolas a nivel nacional',
           tech: 'Flutter • PostgreSQL • Hive',
         ),
-        SizedBox(height: isWeb ? 12.0 : (isMobile ? 8.0 : 12.0)),
+        SizedBox(height: 12.h),
         _buildProjectCard(
-          context: context,
           title: 'Sistema ASTREA',
           description: 'Gestión de expedientes para 5000+ funcionarios',
           tech: 'React • Material-UI • MongoDB',
@@ -365,26 +329,21 @@ class HomeScreen extends StatelessWidget {
   }
 
   Widget _buildProjectCard({
-    required BuildContext context,
     required String title,
     required String description,
     required String tech,
   }) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final isWeb = kIsWeb;
-    final isMobile = screenWidth < 768;
-
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(isWeb ? 16.0 : (isMobile ? 12.0 : 16.0)),
+      padding: EdgeInsets.all(16.w),
       decoration: BoxDecoration(
         color: cardColor,
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(12.r),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.05),
-            offset: const Offset(0, 2),
-            blurRadius: 8,
+            offset: Offset(0, 2.h),
+            blurRadius: 8.r,
           ),
         ],
       ),
@@ -394,19 +353,19 @@ class HomeScreen extends StatelessWidget {
           Row(
               children: [
                 Container(
-                  width: isWeb ? 40.0 : (isMobile ? 32.0 : 40.0),
-                  height: isWeb ? 40.0 : (isMobile ? 32.0 : 40.0),
+                  width: 40.w,
+                  height: 40.h,
                   decoration: BoxDecoration(
                     color: primaryColor.withOpacity(0.1),
-                    borderRadius: BorderRadius.circular(8),
+                    borderRadius: BorderRadius.circular(8.r),
                   ),
                   child: Icon(
                     Icons.smartphone,
-                    size: isWeb ? 28.0 : (isMobile ? 20.0 : 28.0),
+                    size: kIsWeb ? 28.w : 20.w,
                     color: primaryColor,
                   ),
                 ),
-                SizedBox(width: isWeb ? 12.0 : (isMobile ? 8.0 : 12.0)),
+                SizedBox(width: 12.w),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -415,7 +374,7 @@ class HomeScreen extends StatelessWidget {
                         title,
                         style: subtitle1,
                       ),
-                      SizedBox(height: 4),
+                      SizedBox(height: 4.h),
                       Text(
                         description,
                         style: body2,
@@ -427,20 +386,17 @@ class HomeScreen extends StatelessWidget {
                 ),
               ],
             ),
-          SizedBox(height: isWeb ? 12.0 : (isMobile ? 8.0 : 12.0)),
+          SizedBox(height: 12.h),
           Container(
-            padding: EdgeInsets.symmetric(
-              horizontal: isWeb ? 12.0 : (isMobile ? 8.0 : 12.0),
-              vertical: isWeb ? 6.0 : (isMobile ? 4.0 : 6.0),
-            ),
+            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
             decoration: BoxDecoration(
               color: backgroundColor,
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.circular(16.r),
             ),
             child: Text(
               tech,
               style: TextStyle(
-                fontSize: isWeb ? 14.0 : (isMobile ? 12.0 : 14.0),
+                fontSize: kIsWeb ? 14.sp : 12.sp,
                 color: textSecondary,
               ),
             ),
