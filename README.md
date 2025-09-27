@@ -1,6 +1,8 @@
 # César Polanco - Portfolio App
 
 Una aplicación de portafolio personal desarrollada en Flutter que presenta mi experiencia profesional, habilidades técnicas y proyectos de manera elegante y responsiva.
+Puedes ver la version movil aca: [Visitar Portafolio Movil](https://appetize.io/app/b_yxxvclgjn5jrt54pybsfx23nq4 "Ir a portafolio movil")
+O puedes ver la version web aca: [Visitar Portafolio Web](https://flutter-portfolio-beta.vercel.app/ "Ir a portafolio web")
 
 ## 📱 Vista General de la Aplicación
 
@@ -72,6 +74,7 @@ La aplicación incluye un sistema completo de componentes UI personalizados:
 - **Navegación**: Sistema de rutas escalable
 - **Componentes**: Biblioteca de widgets reutilizables
 - **Tema**: Colores y estilos vibrantes
+- **Despliegue**: Vercel y Appetize
 
 ## 🛠️ Tecnologías Utilizadas
 
@@ -120,8 +123,8 @@ lib/
 
 ## 🎯 Próximas Características
 
-- [ ] Modo oscuro/claro
-- [ ] Animaciones avanzadas
+- [X] Modo oscuro/claro
+- [X] Animaciones avanzadas
 - [ ] Integración con APIs
 - [ ] Versión web responsiva
 - [ ] Soporte multiidioma
