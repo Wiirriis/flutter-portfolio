@@ -33,7 +33,6 @@ class MyApp extends StatelessWidget {
           : const Size(375, 812), // iPhone X dimensions for mobile
       minTextAdapt: true,
       splitScreenMode: true,
-      ensureScreenSize: true,
       builder: (context, child) {
         return MaterialApp(
           title: 'Mi Portafolio',
