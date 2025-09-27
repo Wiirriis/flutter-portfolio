@@ -134,8 +134,8 @@ class ActionButtonCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                width: kIsWeb ? 60.w : 48.w,
-                height: kIsWeb ? 60.h : 48.h,
+                width: 48.w,
+                height: 48.h,
                 decoration: BoxDecoration(
                   color: enabled
                       ? (iconColor ?? primaryColor).withOpacity(0.1)
@@ -144,7 +144,7 @@ class ActionButtonCard extends StatelessWidget {
                 ),
                 child: Icon(
                   icon,
-                  size: kIsWeb ? 30.w : 24.w,
+                  size: 24.w,
                   color: enabled
                       ? (iconColor ?? primaryColor)
                       : textSecondary,
@@ -159,7 +159,7 @@ class ActionButtonCard extends StatelessWidget {
                   style: subtitle2.copyWith(
                     color: enabled ? textPrimary : textSecondary,
                     fontWeight: FontWeight.w500,
-                    fontSize: kIsWeb ? 18.sp : 14.sp,
+                    fontSize: 14.sp,
                   ),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
