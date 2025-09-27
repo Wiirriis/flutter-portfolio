@@ -19,11 +19,11 @@ class AboutScreen extends StatelessWidget {
           children: [
             _buildProfileSection(),
             SizedBox(height: 32.h),
-            _buildInfoSection(),
+            _buildInfoSection(context),
             SizedBox(height: 32.h),
             _buildExperienceSection(),
             SizedBox(height: 32.h),
-            _buildTechStackSection(),
+            _buildTechStackSection(context),
           ],
         ),
       ),
@@ -94,7 +94,7 @@ class AboutScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildInfoSection() {
+  Widget _buildInfoSection(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -104,18 +104,21 @@ class AboutScreen extends StatelessWidget {
         ),
         SizedBox(height: 16.h),
         _buildInfoCard(
+          context,
           icon: Icons.school_outlined,
           title: 'Educación',
           description: 'Maestría en Seguridad Informática (2023)\nIngeniería en Sistemas (2021)\nUniversidad Mariano Gálvez',
         ),
         SizedBox(height: 16.h),
         _buildInfoCard(
+          context,
           icon: Icons.work_outline,
           title: 'Experiencia',
           description: 'Más de 5 años desarrollando aplicaciones móviles\ny sistemas de gestión de alto impacto\nSectores: Fintech, Agrícola, Gubernamental',
         ),
         SizedBox(height: 16.h),
         _buildInfoCard(
+          context,
           icon: Icons.code_outlined,
           title: 'Especialización',
           description: 'Flutter & Mobile Development\nFull Stack (Angular, React, Java Spring)\nLending as a Service (LaaS)\nDevOps (Docker, Jenkins)',
@@ -124,7 +127,8 @@ class AboutScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildInfoCard({
+  Widget _buildInfoCard(
+    BuildContext context, {
     required IconData icon,
     required String title,
     required String description,
@@ -155,7 +159,7 @@ class AboutScreen extends StatelessWidget {
             ),
             child: Icon(
               icon,
-              size: 24.w,
+              size: getResponsiveIconSize(24, context).w,
               color: primaryColor,
             ),
           ),
@@ -247,7 +251,7 @@ class AboutScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildTechStackSection() {
+  Widget _buildTechStackSection(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -261,24 +265,24 @@ class AboutScreen extends StatelessWidget {
           runSpacing: 12.h,
           children: [
             // Mobile
-            _buildTechChip('Flutter', Icons.phone_android),
-            _buildTechChip('Dart', Icons.code),
-            _buildTechChip('Provider', Icons.architecture),
-            _buildTechChip('BloC', Icons.account_tree),
+            _buildTechChip(context, 'Flutter', Icons.phone_android),
+            _buildTechChip(context, 'Dart', Icons.code),
+            _buildTechChip(context, 'Provider', Icons.architecture),
+            _buildTechChip(context, 'BloC', Icons.account_tree),
             // Frontend
-            _buildTechChip('React', Icons.web),
-            _buildTechChip('Angular', Icons.web_asset),
-            _buildTechChip('JavaScript', Icons.javascript),
-            _buildTechChip('TailwindCSS', Icons.style),
+            _buildTechChip(context, 'React', Icons.web),
+            _buildTechChip(context, 'Angular', Icons.web_asset),
+            _buildTechChip(context, 'JavaScript', Icons.javascript),
+            _buildTechChip(context, 'TailwindCSS', Icons.style),
             // Backend
-            _buildTechChip('Java Spring', Icons.storage),
-            _buildTechChip('C# ASP.NET', Icons.code_outlined),
-            _buildTechChip('PostgreSQL', Icons.storage),
-            _buildTechChip('MongoDB', Icons.storage_outlined),
+            _buildTechChip(context, 'Java Spring', Icons.storage),
+            _buildTechChip(context, 'C# ASP.NET', Icons.code_outlined),
+            _buildTechChip(context, 'PostgreSQL', Icons.storage),
+            _buildTechChip(context, 'MongoDB', Icons.storage_outlined),
             // DevOps
-            _buildTechChip('Docker', Icons.inventory_2_outlined),
-            _buildTechChip('Jenkins', Icons.build),
-            _buildTechChip('Git', Icons.source),
+            _buildTechChip(context, 'Docker', Icons.inventory_2_outlined),
+            _buildTechChip(context, 'Jenkins', Icons.build),
+            _buildTechChip(context, 'Git', Icons.source),
           ],
         ),
         SizedBox(height: 24.h),
@@ -330,7 +334,7 @@ class AboutScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildTechChip(String label, IconData icon) {
+  Widget _buildTechChip(BuildContext context, String label, IconData icon) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
       decoration: BoxDecoration(
@@ -353,14 +357,14 @@ class AboutScreen extends StatelessWidget {
         children: [
           Icon(
             icon,
-            size: 18.w,
+            size: getResponsiveIconSize(18, context).w,
             color: primaryColor,
           ),
           SizedBox(width: 8.w),
           Text(
             label,
             style: TextStyle(
-              fontSize: 14.sp,
+              fontSize: getResponsiveFontSize(14, context).sp,
               fontWeight: FontWeight.w500,
               color: primaryColor,
             ),

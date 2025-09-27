@@ -23,6 +23,7 @@ class ProjectsScreen extends StatelessWidget {
             _buildHeaderSection(),
             SizedBox(height: 24.h),
             _buildProjectCard(
+              context,
               title: 'Bowpi - LaaS',
               subtitle: 'Plataforma Fintech',
               description: 'Plataforma de Lending as a Service (LaaS) que digitaliza y optimiza todo el proceso de otorgamiento de créditos mediante un modelo modular configurable.',
@@ -40,6 +41,7 @@ class ProjectsScreen extends StatelessWidget {
             ),
             SizedBox(height: 20.h),
             _buildProjectCard(
+              context,
               title: 'Agricontrol+',
               subtitle: 'Aplicación Móvil Agrícola',
               description: 'Aplicación móvil Android para gestión de recursos y asistencia técnica, utilizada por más de 500 técnicos agrícolas a nivel nacional.',
@@ -56,6 +58,7 @@ class ProjectsScreen extends StatelessWidget {
             ),
             SizedBox(height: 20.h),
             _buildProjectCard(
+              context,
               title: 'Sistema ASTREA',
               subtitle: 'Sistema Gubernamental',
               description: 'Sistema web para gestión de expedientes y denuncias del Ministerio Público, utilizado por más de 5,000 funcionarios a nivel nacional.',
@@ -72,6 +75,7 @@ class ProjectsScreen extends StatelessWidget {
             ),
             SizedBox(height: 20.h),
             _buildProjectCard(
+              context,
               title: 'Agriconecta',
               subtitle: 'Plataforma de Conexión Agrícola',
               description: 'Aplicación que conecta actores de la cadena de valor agrícola, facilitando la comunicación entre productores, técnicos y compradores.',
@@ -88,6 +92,7 @@ class ProjectsScreen extends StatelessWidget {
             ),
             SizedBox(height: 20.h),
             _buildProjectCard(
+              context,
               title: 'Módulo PNA - E-SIGE',
               subtitle: 'Sistema de Protección Social',
               description: 'Módulo del sistema E-SIGE para protección de la niñez y adolescencia de la Procuraduría General de la Nación.',
@@ -152,7 +157,8 @@ class ProjectsScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildProjectCard({
+  Widget _buildProjectCard(
+    BuildContext context, {
     required String title,
     required String subtitle,
     required String description,
@@ -223,7 +229,7 @@ class ProjectsScreen extends StatelessWidget {
                           Text(
                             subtitle,
                             style: TextStyle(
-                              fontSize: 13.sp,
+                              fontSize: getResponsiveFontSize(13, context).sp,
                               color: textSecondary,
                             ),
                           ),
@@ -242,7 +248,7 @@ class ProjectsScreen extends StatelessWidget {
                           child: Text(
                             status,
                             style: TextStyle(
-                              fontSize: 10.sp,
+                              fontSize: getResponsiveFontSize(10, context).sp,
                               color: _getStatusColor(status),
                               fontWeight: FontWeight.bold,
                             ),
@@ -252,7 +258,7 @@ class ProjectsScreen extends StatelessWidget {
                         Text(
                           period,
                           style: TextStyle(
-                            fontSize: 11.sp,
+                            fontSize: getResponsiveFontSize(11, context).sp,
                             color: textSecondary,
                           ),
                         ),
@@ -360,7 +366,7 @@ class ProjectsScreen extends StatelessWidget {
                         child: Text(
                           achievement,
                           style: TextStyle(
-                            fontSize: 13.sp,
+                            fontSize: getResponsiveFontSize(13, context).sp,
                             color: textSecondary,
                             height: 1.4,
                           ),
@@ -393,7 +399,7 @@ class ProjectsScreen extends StatelessWidget {
                     child: Text(
                       tech,
                       style: TextStyle(
-                        fontSize: 11.sp,
+                        fontSize: getResponsiveFontSize(11, context).sp,
                         color: textSecondary,
                         fontWeight: FontWeight.w500,
                       ),

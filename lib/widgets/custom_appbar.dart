@@ -32,7 +32,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               icon: Icon(
                 Icons.arrow_back,
                 color: Colors.white,
-                size: 24.w,
+                size: getResponsiveIconSize(24, context).w,
               ),
               onPressed: onBackPressed ?? () => Navigator.pop(context),
             )

@@ -97,7 +97,7 @@ class SkillsScreen extends StatelessWidget {
               ],
             ),
             SizedBox(height: 32.h),
-            _buildSoftSkillsSection(),
+            _buildSoftSkillsSection(context),
             SizedBox(height: 24.h),
             _buildLanguagesSection(),
           ],
@@ -300,7 +300,7 @@ class SkillsScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildSoftSkillsSection() {
+  Widget _buildSoftSkillsSection(BuildContext context) {
     final softSkills = [
       'Liderazgo Técnico',
       'Resolución de Problemas',
@@ -363,7 +363,7 @@ class SkillsScreen extends StatelessWidget {
               child: Text(
                 skill,
                 style: TextStyle(
-                  fontSize: 14.sp,
+                  fontSize: getResponsiveFontSize(14, context).sp,
                   color: primaryColor,
                   fontWeight: FontWeight.w500,
                 ),

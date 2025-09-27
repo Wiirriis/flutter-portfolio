@@ -69,7 +69,7 @@ class _ContactScreenState extends State<ContactScreen> {
         children: [
           Icon(
             Icons.mail_outline,
-            size: 48.w,
+            size: getResponsiveIconSize(48, context).w,
             color: primaryColor,
           ),
           SizedBox(height: 16.h),
@@ -173,7 +173,7 @@ class _ContactScreenState extends State<ContactScreen> {
                   children: [
                     Icon(
                       Icons.send,
-                      size: 20.w,
+                      size: getResponsiveIconSize(20, context).w,
                     ),
                     SizedBox(width: 8.w),
                     Text(
@@ -211,7 +211,7 @@ class _ContactScreenState extends State<ContactScreen> {
         prefixIcon: Icon(
           icon,
           color: primaryColor,
-          size: 20.w,
+          size: getResponsiveIconSize(20, context).w,
         ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12.r),
@@ -306,7 +306,7 @@ class _ContactScreenState extends State<ContactScreen> {
           ),
           child: Icon(
             icon,
-            size: 20.w,
+            size: getResponsiveIconSize(20, context).w,
             color: primaryColor,
           ),
         ),
@@ -314,7 +314,7 @@ class _ContactScreenState extends State<ContactScreen> {
         subtitle: Text(subtitle, style: body2),
         trailing: Icon(
           Icons.arrow_forward_ios,
-          size: 16.w,
+          size: getResponsiveIconSize(16, context).w,
           color: textSecondary,
         ),
         onTap: onTap,
